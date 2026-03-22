@@ -1,7 +1,7 @@
 /*******************************************************************
 * Name: Francis Hampton
-* Date: 3/15/26
-* Assignment SDC220L Week 2 Project - Software Design and Control Statements
+* Date: 3/22/26
+* Assignment SDC220L Week 3 Project - Arrays and Lists
 * Maths application (program) class.
 * In this application, we will expand last week's calculator by adding a menu
 * system, looping until the user quits, and supporting basic math operations 

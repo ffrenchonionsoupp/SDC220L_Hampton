@@ -1,7 +1,7 @@
 /*******************************************************************
 * Name: Francis Hampton
-* Date: 3/15/26
-* Assignment SDC220L Week 2 Project - Software Design and Control Statements
+* Date: 3/22/26
+* Assignment SDC220L Week 3 Project - Arrays and Lists
 * Outputs application (program) class.
 * In this application, we will expand last week's calculator by adding a menu
 * system, looping until the user quits, and supporting basic math operations 
@@ -45,6 +45,27 @@ namespace CalculatorProject
         {
             Console.WriteLine(
                 "\nThe result of your formula \"{0}\" is {1}. Ain't that something?", formula, result);
+        }
+
+        public void ShowingSingleMemoryStored(double value)
+        {
+            Console.WriteLine($"\nAlright! I’ve tucked {value} safely into memory.");
+        }
+
+        public void ShowingSingleMemoryRetrieved(double value)
+        {
+            Console.WriteLine($"\nHere it is! Your stored value is {value}.");
+        }
+
+        public void ShowingSingleMemoryCleared()
+        {
+            Console.WriteLine("\nPoof! Your stored value has been cleared.");
+        }
+
+        public void ShowingCollectionValues(List<int> values)
+        {
+            Console.WriteLine("\nHere are all the values you're storing:");
+            Console.WriteLine(string.Join(", ", values));
         }
 
         public void ShowingError(string message)

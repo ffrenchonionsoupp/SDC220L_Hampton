@@ -14,5 +14,6 @@
     <Compile Include="Inputs.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Outputs.cs" />
+    <Compile Include="Memories.cs" />
   </ItemGroup>
 </Project>
