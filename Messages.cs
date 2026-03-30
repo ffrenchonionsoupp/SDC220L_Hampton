@@ -14,18 +14,18 @@ namespace CalculatorProject
         public void PrintHeader()
         {
             // Print a header line
-            Console.WriteLine("\nFrancis - Week 3 Project\n");
-            Console.WriteLine("Calculator 3.0!\n");
+            Console.WriteLine("\nFrancis - Week 4 Project\n");
+            Console.WriteLine("Calculator 4.0!\n");
         }
 
         public void PrintWelcome()
         {
             // Print a welcome message
-            Console.WriteLine("This is my calculator app WIP for week 3!");
-            Console.WriteLine("This week, you can complete all the actions from last week, while also .");
-            Console.WriteLine("being able to store values in memory. You can still decide to add, ");
-            Console.WriteLine("subtract, multiply, divide, or even submit your own formula! You can also ");
-            Console.WriteLine("work with a collection of up to 10 integers.");
+            Console.WriteLine("This is my calculator app WIP for week 4!");
+            Console.WriteLine("This week, you can complete all the actions from last week, while also");
+            Console.WriteLine("being able to experience exception handling with division problems that might ");
+            Console.WriteLine("involve a zero denominator, and non-number values being entered! Go ahead, ");
+            Console.WriteLine("try it yourself! You'll just be prompted to try again.");
             Console.WriteLine("The calculator will run until you tell it to stop. Enjoy!");
             Console.WriteLine("This message is subject to change and develop as the calculator progresses.");
         }

@@ -27,10 +27,10 @@ namespace CalculatorProject
             return intVal1 * intVal2;
         }
 
-        public double? Divide(double intVal1, double intVal2)
+        public double Divide(double intVal1, double intVal2)
         {
             if (intVal2 == 0)
-                return null;
+                throw new DivideByZeroException("You cannot ddivide by zero, sorry!");
 
             return intVal1 / intVal2;
         }

@@ -72,10 +72,27 @@ namespace CalculatorProject
                 {
                     // note: calling from the Messages class
                     msg.PrintMathMenu();
-                    
-                    choice = input.MenuChoice();
-                    Console.WriteLine();
-                
+
+                    // note: introducing a try catch block for error handling
+                    try
+                    {
+                        choice = input.MenuChoice();
+                        if (choice == null)
+                            throw new FormatException("Menu choice cannot be empty.");
+
+                        if (choice != "1" && choice != "2" && choice != "3" &&
+                            choice != "4" && choice != "5" && choice != "6")
+                        {
+                            throw new FormatException("Invalid menu selection.");
+                        }
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e);
+                        output.ShowingError("Please choose a valid menu option.\n");
+                        continue; // restart menu loop
+                    }
+
                     // switch case to perform actions based on option, set up for modules/methods
                     switch (choice)
                     {
@@ -101,14 +118,29 @@ namespace CalculatorProject
                             break;
 
                         case "4":
-                            intVal1 = input.Numbers("Enter the first number: ");
-                            intVal2 = input.Numbers("Enter the second number: ");
-                            double? divResult = math.Divide(intVal1, intVal2);
+                            bool cont = true;
 
-                            if (divResult == null)
-                                output.ShowingError("Cannot divide by zero.");
-                            else
-                                output.ShowingDivision(intVal1, intVal2, divResult.Value);
+                            while (cont)
+                            {
+                                try
+                                {
+                                    intVal1 = input.Numbers("Enter the first number: ");
+                                    intVal2 = input.Numbers("Enter the second number: ");
+                                    double divResult = math.Divide(intVal1, intVal2);
+                                    output.ShowingDivision(intVal1, intVal2, divResult);
+                                    cont = false; // success, exit loop
+                                }
+                                catch (FormatException e)
+                                {
+                                    Console.WriteLine(e);
+                                    output.ShowingError("Uh oh! Please enter numeric values only.\n");
+                                }
+                                catch (DivideByZeroException e)
+                                {
+                                    Console.WriteLine(e);
+                                    output.ShowingError("Woops! You cannot divide by zero. Let's try again!\n");
+                                }
+                            }
                             break;
 
                         case "5":
