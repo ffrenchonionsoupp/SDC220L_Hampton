@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SDC220L_Hampton")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee6b01dac875b2fe99fa0c19be654c9cccca7aa0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc656a8b6b96ca8edde71dfadf916e60699742d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SDC220L_Hampton")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SDC220L_Hampton")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

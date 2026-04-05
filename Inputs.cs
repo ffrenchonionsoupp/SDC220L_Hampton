@@ -1,7 +1,7 @@
 /*******************************************************************
 * Name: Francis Hampton
-* Date: 3/22/26
-* Assignment SDC220L Week 3 Project - Arrays and Lists
+* Date: 4/5/26
+* Assignment SDC220L Week 5 Project
 * Inputs application (program) class.
 * In this application, we will expand last week's calculator by adding a new menu
 * system, looping until the user quits, and supporting basic math operations and memory actions
@@ -18,16 +18,41 @@ namespace CalculatorProject
 
         public double Numbers(string prompt)
         {
-            Console.Write(prompt);
-            string? input = Console.ReadLine();
-            return Convert.ToDouble(input);
+             while (true)
+            {
+                try
+                {
+                    Console.Write(prompt);
+                    return Convert.ToDouble(Console.ReadLine());
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e);
+                    Console.WriteLine("Oops! That's an invalid number. Try again.\n");
+                }
+            }
         }
 
-        public int GetInt(string prompt)
+        public List<double> GetNumberList()
         {
-            Console.Write(prompt);
-            string? input = Console.ReadLine();
-            return Convert.ToInt32(input);
+            Console.WriteLine("Enter numbers separated by spaces:");
+
+            while (true)
+            {
+                try
+                {
+                    string? input = Console.ReadLine();
+                    return input
+                        .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                        .Select(double.Parse)
+                        .ToList();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.WriteLine("Oops! That's an invalid list. Try again.\n");
+                }
+            }
         }
 
         public string? Formula()

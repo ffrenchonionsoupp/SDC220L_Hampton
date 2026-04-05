@@ -1,7 +1,7 @@
 /*******************************************************************
 * Name: Francis Hampton
-* Date: 3/22/26
-* Assignment SDC220L Week 3 Project - Arrays and Lists
+* Date: 4/5/26
+* Assignment SDC220L Week 5 Project
 * Maths application (program) class.
 * In this application, we will expand last week's calculator by adding a menu
 * system, looping until the user quits, and supporting basic math operations 
@@ -12,48 +12,40 @@ namespace CalculatorProject
     public class Maths
     {
         // note: these will do the math for us, keep an eye on formula
-        public double Add(double intVal1, double intVal2)
+        public double Add(List<double> nums)
         {
-            return intVal1 + intVal2;
+            return nums.Sum();
         }
 
-        public double Subtract(double intVal1, double intVal2)
+        public double Subtract(List<double> nums)
         {
-            return intVal1 - intVal2;
+            double result = nums[0];
+            for (int i = 1; i < nums.Count; i++)
+                result -= nums[i];
+            return result;
         }
 
-        public double Multiply(double intVal1, double intVal2)
+        public double Multiply(List<double> nums)
         {
-            return intVal1 * intVal2;
+            double result = 1;
+            foreach (double n in nums)
+                result *= n;
+            return result;
         }
 
-        public double Divide(double intVal1, double intVal2)
+        public double Divide(List<double> nums)
         {
-            if (intVal2 == 0)
-                throw new DivideByZeroException("You cannot ddivide by zero, sorry!");
+            double result = nums[0];
 
-            return intVal1 / intVal2;
-        }
-
-        public double? EvaluateFormula(string formula)
-        {
-            string[] parts = formula.Split(' ');
-
-            if (parts.Length != 3)
-                return null;
-
-            double intVal1 = Convert.ToDouble(parts[0]);
-            string operation = parts[1];
-            double intVal2 = Convert.ToDouble(parts[2]);
-
-            return operation switch
+            for (int i = 1; i < nums.Count; i++)
             {
-                "+" => intVal1 + intVal2,
-                "-" => intVal1 - intVal2,
-                "*" => intVal1 * intVal2,
-                "/" => intVal2 == 0 ? null : intVal1 / intVal2,
-                _ => null
-            };
+                if (nums[i] == 0)
+                    throw new DivideByZeroException("Cannot divide by zero.");
+
+                result /= nums[i];
+            }
+
+            return result;
         }
     }
 }
