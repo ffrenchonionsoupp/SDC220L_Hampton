@@ -62,7 +62,7 @@ Over several weeks, the project evolved from a simple two‑number calculator in
 - Writing clear documentation  
 
 ## Language Used
-- **C#** — used for all classes, logic, and console interaction  
+- **C#** used for all classes, logic, and console interaction  
 
 ## Development Process Used
 - **Iterative Development**  
